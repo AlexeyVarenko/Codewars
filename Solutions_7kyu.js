@@ -249,3 +249,69 @@ function rowWeights(array){
    let result = [sum1, sum2];
    return result;
  }
+
+ /*Paul's Misery
+ Paul is an excellent coder and sits high on the CW leaderboard. He solves kata like a banshee but would also like to lead a normal life, with other activities. But he just can't stop solving all the kata!!
+
+Given an array (x) you need to calculate the Paul Misery Score. The values are worth the following points:
+
+kata = 5
+Petes kata = 10
+life = 0
+eating = 1
+The Misery Score is the total points gained from the array. Once you have the total, return as follows:
+
+< 40 = 'Super happy!'
+< 70 >= 40 = 'Happy!'
+< 100 >= 70 = 'Sad!'
+> 100 = 'Miserable!'*/
+
+ 
+function paul(x) {
+2
+    let miseryArr = []
+3
+    for (let i = 0; i < x.length; i++) {
+4
+      if (x[i] ==='kata') {
+5
+        miseryArr.push(5)
+6
+      } else if (x[i] === "Petes kata") {
+7
+        miseryArr.push(10)
+8
+      } else if (x[i] === "life") {
+9
+        miseryArr.push(0)
+10
+      } else if (x[i] === "eating") {
+11
+        miseryArr.push(1)
+12
+      }    
+13
+    }  console.log(miseryArr)
+14
+       let sumMisery = miseryArr.reduce((acc, c) => acc + c, 0)
+15
+       if (sumMisery < 40) {
+16
+         return 'Super happy!'
+17
+        } else if (sumMisery < 70) {
+18
+          return 'Happy!'
+19
+        } else if (sumMisery < 100) {
+20
+          return 'Sad!'
+21
+        } else {
+22
+          return 'Miserable!'
+23
+        }
+24
+  }
+ Excellent! You 
