@@ -5,13 +5,13 @@ a is the first term of a Fibonacci sequence, b is the second term of this sequen
 Good luck, muh fellow coding warrior.*/
 
 
-function isFibo(a,b,f) {
-    let arr=[a,b];
-      for(let i=1;i<=f ; i++){
-        arr.push(arr[i-1]+arr[i]);
-      }
-      return arr.includes(f);
-    }
+function isFibo(a, b, f) {
+  let arr = [a, b];
+  for (let i = 1; i <= f; i++) {
+    arr.push(arr[i - 1] + arr[i]);
+  }
+  return arr.includes(f);
+}
 
 
 
@@ -31,14 +31,14 @@ function isFibo(a,b,f) {
 
 
 
-    function spoonerize(words) {
-      let [first, second]=words.split(' ');
-      let result1 = first.replace(first[0], second[0]);
-      let result2 = second.replace(second[0], first[0]); 
-      let result3= result1+' '+result2;
-      return result3;
-        
-      }
+function spoonerize(words) {
+  let [first, second] = words.split(' ');
+  let result1 = first.replace(first[0], second[0]);
+  let result2 = second.replace(second[0], first[0]);
+  let result3 = result1 + ' ' + result2;
+  return result3;
+
+}
 
 /*Spoonerize... with numbers... numberize?... numboonerize?... noonerize? ...anyway! If you don't yet know what a spoonerism is and haven't yet tried my spoonerism kata, please do check it out first.
 
@@ -47,20 +47,20 @@ You will create a function which takes an array of two positive integers, spoone
 [123, 456] = 423 - 156 = 267
 Your code must test that all array items are numbers and return "invalid array" if it finds that either item is not a number. The provided array will always contain 2 elements.
 
-When the inputs are valid, they will always be integers, no floats will be passed. However, you must take into account that the numbers will be of varying magnitude, between and within test cases.*/      
+When the inputs are valid, they will always be integers, no floats will be passed. However, you must take into account that the numbers will be of varying magnitude, between and within test cases.*/
 
 
 function noonerize(numbers) {
   if (numbers.some(isNaN)) {
     return "invalid array"
- } else { 
-let result1 = numbers.join(" ");
-let [first, second]=result1.split(' ');  
-let result2 =Number(first.replace(first[0], second[0]));
-let result3 =Number(second.replace(second[0], first[0])); 
-let result4=Math.abs(result2-result3);
-   return result4;
-   }
+  } else {
+    let result1 = numbers.join(" ");
+    let [first, second] = result1.split(' ');
+    let result2 = Number(first.replace(first[0], second[0]));
+    let result3 = Number(second.replace(second[0], first[0]));
+    let result4 = Math.abs(result2 - result3);
+    return result4;
+  }
 }
 
 /*Given an array of digitals numbers, return a new array of length number containing the last even numbers from the original array (in the same order). The original array will be not empty and will contain at least "number" even numbers.
@@ -73,13 +73,13 @@ For example:
 
 
 function evenNumbers(array, number) {
-let newArr=[];
-  for(let i=0; i<array.length; i++){
-    if (array[i]%2===0){
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
       newArr.push(array[i]);
     }
   }
-  let result=newArr.slice(-number);
+  let result = newArr.slice(-number);
   return result;
 }
 
@@ -113,9 +113,9 @@ nthSmallest({177,225,243,-169,-12,-5,2,92} ,5) ==> return (92)
 Explanation:
 Since the passed number is 5 , Then * the fifth smallest element in this array/list is 92**/
 
-function nthSmallest(arr, pos){
-  let result=arr.sort( (a, b) => a - b );
-    return result[pos-1];
+function nthSmallest(arr, pos) {
+  let result = arr.sort((a, b) => a - b);
+  return result[pos - 1];
 }
 
 //Small enough? - Beginner
@@ -124,21 +124,21 @@ function nthSmallest(arr, pos){
 
 You can assume all values in the array are numbers.*/
 
-function smallEnough(a, limit){
-  let result=a[0];
-    for(let i=1; i<a.length; i++){
-      if (a[i]>result){
-        result=a[i]
-      } 
-    }
-    if(result<=limit){
-      return true;
-    }else{
-      return false;
+function smallEnough(a, limit) {
+  let result = a[0];
+  for (let i = 1; i < a.length; i++) {
+    if (a[i] > result) {
+      result = a[i]
     }
   }
+  if (result <= limit) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-  
+
 //The Office VI - Sabbatical
 /*Learning to code around your full time job is taking over your life. You realise that in order to make significant steps quickly, it would help to go to a coding bootcamp in London.
 
@@ -156,18 +156,18 @@ Note that if s contains three instances of the letter 'l', that still scores thr
 
 If the sum of the three parameters (as described above) is > 22, return 'Sabbatical! Boom!', else return 'Back to your desk, boy.'.*/
 
-function sabb(s, val, happiness){
-  let repl=s.replace(/[sabticl]/gi,'');
-   let result=s.length-repl.length
-   let summ= result+val+happiness;
-   if(summ>22){
-     return  'Sabbatical! Boom!';
-   } else {
-     return 'Back to your desk, boy.';
-   }
-  
- }
- 
+function sabb(s, val, happiness) {
+  let repl = s.replace(/[sabticl]/gi, '');
+  let result = s.length - repl.length
+  let summ = result + val + happiness;
+  if (summ > 22) {
+    return 'Sabbatical! Boom!';
+  } else {
+    return 'Back to your desk, boy.';
+  }
+
+}
+
 
 
 /*Double Every Other
@@ -179,8 +179,8 @@ Example:
 doubleEveryOther([1,2,3,4]) => [ 1, 4, 3, 8 ]*/
 
 function doubleEveryOther(a) {
-  for (i=1; i<a.length;i+=2){
-    a[i]=a[i]*2
+  for (i = 1; i < a.length; i += 2) {
+    a[i] = a[i] * 2
   }
   return a;
 }
@@ -201,20 +201,20 @@ Work through the array from left to right.
 
 Return the resulting array.*/
 
-function trouble(x, t){
- 
-  let sum=[];
-    for ( let i=0; i<=x.length; i++){
-      if(x[i]+x[i+1]===t){
-        x.splice(i + 1, 1);
-        i--;
-      }
-    }
-    return x;
-  }
+function trouble(x, t) {
 
-  /*Row Weights
-  Scenario
+  let sum = [];
+  for (let i = 0; i <= x.length; i++) {
+    if (x[i] + x[i + 1] === t) {
+      x.splice(i + 1, 1);
+      i--;
+    }
+  }
+  return x;
+}
+
+/*Row Weights
+Scenario
 Several people are standing in a row divided into two teams.
 The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.
 
@@ -237,21 +237,21 @@ rowWeights([80])  ==>  return (80, 0)
 Explanation:
 The first element 80 is the total weight of team 1, and the second element 0 is the total weight of team 2.*/
 
-function rowWeights(array){
-  let sum1=0;
-   let sum2=0;
-   for (let i=0;i<array.length; i+=2){
-   sum1+=array[i];
-   }
-    for (let j=1;j<array.length; j+=2){
-   sum2+=array[j];
-   }
-   let result = [sum1, sum2];
-   return result;
- }
+function rowWeights(array) {
+  let sum1 = 0;
+  let sum2 = 0;
+  for (let i = 0; i < array.length; i += 2) {
+    sum1 += array[i];
+  }
+  for (let j = 1; j < array.length; j += 2) {
+    sum2 += array[j];
+  }
+  let result = [sum1, sum2];
+  return result;
+}
 
- /*Paul's Misery
- Paul is an excellent coder and sits high on the CW leaderboard. He solves kata like a banshee but would also like to lead a normal life, with other activities. But he just can't stop solving all the kata!!
+/*Paul's Misery
+Paul is an excellent coder and sits high on the CW leaderboard. He solves kata like a banshee but would also like to lead a normal life, with other activities. But he just can't stop solving all the kata!!
 
 Given an array (x) you need to calculate the Paul Misery Score. The values are worth the following points:
 
@@ -266,65 +266,65 @@ The Misery Score is the total points gained from the array. Once you have the to
 < 100 >= 70 = 'Sad!'
 > 100 = 'Miserable!'*/
 
- 
+
 function paul(x) {
-2
-    let miseryArr = []
-3
-    for (let i = 0; i < x.length; i++) {
-4
-      if (x[i] ==='kata') {
-5
-        miseryArr.push(5)
-6
-      } else if (x[i] === "Petes kata") {
-7
-        miseryArr.push(10)
-8
-      } else if (x[i] === "life") {
-9
-        miseryArr.push(0)
-10
-      } else if (x[i] === "eating") {
-11
-        miseryArr.push(1)
-12
-      }    
-13
-    }  console.log(miseryArr)
-14
-       let sumMisery = miseryArr.reduce((acc, c) => acc + c, 0)
-15
-       if (sumMisery < 40) {
-16
-         return 'Super happy!'
-17
-        } else if (sumMisery < 70) {
-18
-          return 'Happy!'
-19
-        } else if (sumMisery < 100) {
-20
-          return 'Sad!'
-21
-        } else {
-22
-          return 'Miserable!'
-23
-        }
-24
+  2
+  let miseryArr = []
+  3
+  for (let i = 0; i < x.length; i++) {
+    4
+    if (x[i] === 'kata') {
+      5
+      miseryArr.push(5)
+      6
+    } else if (x[i] === "Petes kata") {
+      7
+      miseryArr.push(10)
+      8
+    } else if (x[i] === "life") {
+      9
+      miseryArr.push(0)
+      10
+    } else if (x[i] === "eating") {
+      11
+      miseryArr.push(1)
+      12
+    }
+    13
+  } console.log(miseryArr)
+  14
+  let sumMisery = miseryArr.reduce((acc, c) => acc + c, 0)
+  15
+  if (sumMisery < 40) {
+    16
+    return 'Super happy!'
+    17
+  } else if (sumMisery < 70) {
+    18
+    return 'Happy!'
+    19
+  } else if (sumMisery < 100) {
+    20
+    return 'Sad!'
+    21
+  } else {
+    22
+    return 'Miserable!'
+    23
   }
+  24
+}
 
 
-  /*JavaScript Array Filter
-  JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
+/*JavaScript Array Filter
+JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
 
 The solution would work like the following:
 
 getEvenNumbers([2,4,5,6]) // should == [2,4,6]*/
 
-function getEvenNumbers(numbersArray){
-  let result=numbersArray.filter(n=>n%2===0);
+function getEvenNumbers(numbersArray) {
+  let result = numbersArray.filter(n => n % 2 === 0);
   return result;
 }
 
@@ -339,9 +339,9 @@ The Stanton measure of [1, 4, 3, 2, 1, 2, 3, 2] is 3, because 1 occurs 2 times i
 
 The Stanton measure of [1, 4, 1, 2, 11, 2, 3, 1] is 1, because 1 occurs 3 times in the array and 3 occurs 1 time.*/
 
-function stantonMeasure(array){
-  let amount=array.filter(x=>x===1).length;
-  let result=array.filter(x=>x===amount).length;
+function stantonMeasure(array) {
+  let amount = array.filter(x => x === 1).length;
+  let result = array.filter(x => x === amount).length;
   return result;
 }
 
@@ -378,16 +378,16 @@ which is: 10 + 0 - 1 = 9
 [0, 1, 0, 0, 2, 1, 0, 2, 2, 1], 3, -1, 2)  -->  3
 because: 4*3 + 3*-1 - 3*2 = 3*/
 
-function scoreTest(str, right, omit, wrong){
-  let correct=str.filter(x=>x===0).length;
-  let empty=str.filter(x=>x===1).length;
-  let incorrect=str.filter(x=>x===2).length;
-  return (correct*right)+(empty*omit)-(incorrect*wrong)  
-   }
+function scoreTest(str, right, omit, wrong) {
+  let correct = str.filter(x => x === 0).length;
+  let empty = str.filter(x => x === 1).length;
+  let incorrect = str.filter(x => x === 2).length;
+  return (correct * right) + (empty * omit) - (incorrect * wrong)
+}
 
 
-   /*The highest profit wins!
-   Story
+/*The highest profit wins!
+Story
 Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
 
 Task
@@ -400,16 +400,16 @@ minMax([1])           == [1, 1]
 Remarks
 All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for null, undefined or similar.*/
 
-function minMax(arr){
-  let min=Math.min(...arr);
-  let max=Math.max(...arr);
+function minMax(arr) {
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
   return [min, max];
-   
-  }
 
-  /*
-  Scrolling Text
-  Let's create some scrolling text!
+}
+
+/*
+Scrolling Text
+Let's create some scrolling text!
 
 Your task is to complete the function which takes a string, and returns an array with all possible rotations of the given string, in uppercase.
 
@@ -417,27 +417,27 @@ Example
 scrollingText("codewars") should return:
 
 [ "CODEWARS",
-  "ODEWARSC",
-  "DEWARSCO",
-  "EWARSCOD",
-  "WARSCODE",
-  "ARSCODEW"
-  "RSCODEWA",
-  "SCODEWAR" ]*/
-  
+"ODEWARSC",
+"DEWARSCO",
+"EWARSCOD",
+"WARSCODE",
+"ARSCODEW"
+"RSCODEWA",
+"SCODEWAR" ]*/
 
-  function scrollingText(text){
-    let result = []
-    
-    for( var i = 0; i < text.length; i++){
-      result.push((text.slice(i) + text.slice(0,i)).toUpperCase())
-    }
-    
-    return result
+
+function scrollingText(text) {
+  let result = []
+
+  for (var i = 0; i < text.length; i++) {
+    result.push((text.slice(i) + text.slice(0, i)).toUpperCase())
   }
 
-  /*Pyramid Array
-  Write a function that when given a number >= 0, returns an Array of ascending length subarrays.
+  return result
+}
+
+/*Pyramid Array
+Write a function that when given a number >= 0, returns an Array of ascending length subarrays.
 
 pyramid(0) => [ ]
 pyramid(1) => [ [1] ]
@@ -446,23 +446,23 @@ pyramid(3) => [ [1], [1, 1], [1, 1, 1] ]
 Note: the subarrays should be filled with 1s*/
 
 function pyramid(n) {
-  let result=[]
-  for(let i=0; i<n;i++){
-    result.push(Array(i+1).fill(1));
+  let result = []
+  for (let i = 0; i < n; i++) {
+    result.push(Array(i + 1).fill(1));
   }
-    console.log(result);
-  }
+  console.log(result);
+}
 
-  /*Sum of two lowest positive integers
-  Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+/*Sum of two lowest positive integers
+Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
 
 For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
 
 [10, 343445353, 3453445, 3453545353453] should return 3453455.*/
 
-function sumTwoSmallestNumbers(numbers) {  
-  numbers.sort(function(a, b) { return a - b; });
-  return (numbers[0]+numbers[1]);
+function sumTwoSmallestNumbers(numbers) {
+  numbers.sort(function (a, b) { return a - b; });
+  return (numbers[0] + numbers[1]);
 }
 
 
@@ -483,15 +483,15 @@ Note: You will always be given a non-empty list containing positive values.
 ENJOY CODING :)*/
 
 function sumOfMinimums(arr) {
- let sum=0;
-  for (let i=0; i<arr.length;i++){
-    min=arr[i][0];
-    for(j=0;j<arr[i].length;j++){
-      if (arr[i][j]<min){
-        min=arr[i][j];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    min = arr[i][0];
+    for (j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] < min) {
+        min = arr[i][j];
       }
     }
-    sum+=min;
+    sum += min;
   }
   return (sum);
 }
@@ -510,20 +510,20 @@ More examples in the test cases.
 
 Good luck!*/
 
-function peak(arr){
-  for(let i=1;i<arr.length-1;i++){
-    let left=arr.slice(0,i);
-    let right=arr.slice(i+1);
-    let sumLeft=left.reduce((sum, current) => sum + current, 0);
-    let sumRight=right.reduce((sum, current) => sum + current, 0);
-    if(sumLeft===sumRight){
+function peak(arr) {
+  for (let i = 1; i < arr.length - 1; i++) {
+    let left = arr.slice(0, i);
+    let right = arr.slice(i + 1);
+    let sumLeft = left.reduce((sum, current) => sum + current, 0);
+    let sumRight = right.reduce((sum, current) => sum + current, 0);
+    if (sumLeft === sumRight) {
       return i;
     }
-    }
+  }
   return -1;
- }
+}
 
- /*Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+/*Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
 
 Write a function which takes a list of strings and returns each line prepended by the correct number.
 
@@ -534,8 +534,8 @@ Examples:
 number([]) // => []
 number(["a", "b", "c"]) // => ["1: a", "2: b", "3: c"]*/
 
-var number=function(array){
-  let result=array.map((item,index)=>`${index+1}: ${item}`);
+var number = function (array) {
+  let result = array.map((item, index) => `${index + 1}: ${item}`);
   return result;
 }
 
@@ -572,23 +572,23 @@ const mountMoose = new Song('Mount Moose', 'The Snazzy Moose');
 mountMoose.howMany(['John', 'joHN', 'carl']); => 2
 Good luck!*/
 
-class Song{
-  constructor(title, artist){
-    this.title=title;
-    this.artist=artist;
-    this.result=[];
+class Song {
+  constructor(title, artist) {
+    this.title = title;
+    this.artist = artist;
+    this.result = [];
   }
-  howMany(people){
-    let amount=0;
-    let result=people.map(x=>x.toLowerCase());
-    result.forEach(p=>{
-      if (!this.result.includes(p)){
+  howMany(people) {
+    let amount = 0;
+    let result = people.map(x => x.toLowerCase());
+    result.forEach(p => {
+      if (!this.result.includes(p)) {
         this.result.push(p);
         amount++;
       }
     })
     return amount;
-  }   
+  }
 }
 
 
@@ -601,10 +601,10 @@ Input
 Each point that the function takes in is an array 2 elements long. The first number is the x coordinate and the second number is the y coordinate. If the line through the two points is vertical or if the same point is given twice, the function should return null/None.*/
 
 function getSlope(p1, p2) {
-  if(p1[0]-p2[0]===0){
+  if (p1[0] - p2[0] === 0) {
     return null;
-  } else{
-    return (p2[1]-p1[1]) / (p2[0]-p1[0])
+  } else {
+    return (p2[1] - p1[1]) / (p2[0] - p1[0])
   }
 }
 
@@ -618,15 +618,44 @@ divisors(25); // should return [5]
 divisors(13); // should return "13 is prime"*/
 
 function divisors(integer) {
-  let result=[];
-  for(let i=2; i<integer; i++){
-    if (integer%i===0){
+  let result = [];
+  for (let i = 2; i < integer; i++) {
+    if (integer % i === 0) {
       result.push(i)
-    } 
+    }
   }
-  if(result.length===0){
+  if (result.length === 0) {
     return (`${integer} is prime`)
-  }else{
+  } else {
     return result;
   }
 };
+
+/*Get the Middle Character 7kyu
+You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+#Examples:
+
+Kata.getMiddle("test") should return "es"
+
+Kata.getMiddle("testing") should return "t"
+
+Kata.getMiddle("middle") should return "dd"
+
+Kata.getMiddle("A") should return "A"
+#Input
+
+A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+
+#Output
+
+The middle character(s) of the word represented as a string.*/
+
+
+function getMiddle(s) {
+  if (s.length % 2 === 1) {
+    return s[Math.floor(s.length / 2)]
+  } else {
+    return (s[Math.floor(s.length / 2) - 1] + s[Math.floor(s.length / 2)])
+  }
+}
