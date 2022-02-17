@@ -676,3 +676,27 @@ const helloWorld = () => {
   let result=String.fromCharCode(72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33);
   return result;
 };
+
+/*Vowel Count
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces. */
+
+function getCount(str) {
+  let vowelsCount = 0;
+  let vowels= ['a', 'e', 'i', 'o', 'u'];
+  let array=str.split('');
+
+  
+  for (let i=0; i<array.length; i++){
+    for (let j=0; j<vowels.length; j++){
+      if (array[i]===vowels[j]){
+       vowelsCount++; 
+      }
+    }
+  }
+  
+  return (vowelsCount) ;
+}
