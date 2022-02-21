@@ -804,3 +804,45 @@ function dateNbDays(a0, a, p) {
   return (date.toISOString().slice(0,10));
   
 }
+
+/*"Very Even" Numbers.
+Description:
+
+#Task:
+
+Write a function that returns true if the number is a "Very Even" number.
+
+If a number is a single digit, then it is simply "Very Even" if it itself is even.
+
+If it has 2 or more digits, it is "Very Even" if the sum of it's digits is "Very Even".
+
+#Examples:
+
+input(88) => returns false -> 8 + 8 = 16 -> 1 + 6 = 7 => 7 is odd 
+
+input(222) => returns true
+
+input(5) => returns false
+
+input(841) => returns true -> 8 + 4 + 1 = 13 -> 1 + 3 => 4 is even
+Note: The numbers will always be 0 or positive integers!*/
+
+function isVeryEvenNumber(n) {
+
+  if(n<10 && n%2===0){
+    return true ;
+  } else if (n>=10) {
+    let array = [...n.toString()].map(Number);
+    //console.log(array);
+    let result = array.reduce((sum, current) => sum + current, 0);
+    //console.log(result);
+    if (result%2===0){
+      return true;
+    } else {
+      return false;
+    }
+  
+  } else {
+    return false;
+  }
+}
