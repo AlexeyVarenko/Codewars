@@ -977,3 +977,48 @@ function vaporcode(string) {
   let result=Upper.split('').join('  ');
   return (result);
 }
+
+/*Guess the Sequence
+You have read the title: you must guess a sequence. It will have something to do with the number given.
+
+Example
+x = 16
+
+result = [1, 10, 11, 12, 13, 14, 15, 16, 2, 3, 4, 5, 6, 7, 8, 9]
+Good luck! */
+
+function sequence(x) {
+  let result=[];
+  
+  for (let i=1; i<=x; i++){
+      result.push(i);
+  }
+  let arr=result.sort();
+  return (arr);
+}
+
+/*Describe the shape
+You will be given the number of angles of a shape with equal sides and angles, and you need to return the number of its sides, and the measure of the interior angles.
+
+Should the number be equal or less than 2, return:
+
+"this will be a line segment or a dot"
+Otherwise return the result in the following format:
+
+"This shape has s sides and each angle measures d"
+(replace s with number of sides and d with the measure of the interior angles).
+
+Angle measure should be floored to the nearest integer.
+
+Number of sides will be tested from 0 to 180.
+
+Have Fun! */
+
+function describeTheShape( angles ){
+  let y=Math.floor(180*(angles-2)/angles)
+  if (angles<=2){
+    return ("this will be a line segment or a dot")
+  } else {
+    return (`This shape has ${angles} sides and each angle measures ${y}`)
+  }
+ }
