@@ -1022,3 +1022,117 @@ function describeTheShape( angles ){
     return (`This shape has ${angles} sides and each angle measures ${y}`)
   }
  }
+
+ /* Tap Code Translation
+ Tap Code Translation
+Tap code is a way to communicate using a series of taps and pauses for each letter. In this kata, we will use dots . for the taps and whitespaces for the pauses.
+
+The number of taps needed for each letter matches its coordinates in the following polybius square (note the c/k position). Then you "tap" the row, a pause, then the column. Each letter is separated from others with a pause too.
+
+   1  2  3  4  5
+1  A  B C\K D  E
+2  F  G  H  I  J
+3  L  M  N  O  P
+4  Q  R  S  T  U
+5  V  W  X  Y  Z
+Input:
+A lowercase string of a single word (no whitespaces or punctuation, only letters).
+
+Output:
+The encoded string as taps and pauses.
+
+Examples
+text = "dot"
+  "D" = (1, 4) = ". ...."
+  "O" = (3, 4) = "... ...."
+  "T" = (4, 4) = ".... ...."
+  
+output: ". .... ... .... .... ...."
+
+
+"example" -> ". ..... ..... ... . . ... .. ... ..... ... . . ....."
+"more"    -> "... .. ... .... .... .. . ....."
+Happy coding!*/
+
+function tapCodeTranslation(text) {
+  let Code='';
+ for(let i=0; i<text.length; i++){
+   switch (text[i]) {
+      case 'a':
+      case 'b':
+      case 'c':
+      case 'k':
+      case 'd':
+      case 'e':
+        Code += '. '
+        break;
+      case 'f':
+      case 'g':
+      case 'h':
+      case 'i':
+      case 'j':
+        Code += '.. '
+        break;
+      case 'l':
+      case 'm':
+      case 'n':
+      case 'o':
+      case 'p':
+        Code += '... '
+        break;
+      case 'q':
+      case 'r':
+      case 's':
+      case 't':
+      case 'u':
+        Code += '.... '
+        break;
+      case 'v':
+      case 'w':
+      case 'x':
+      case 'y':
+      case 'z':
+        Code += '..... '
+        break;
+    }
+    switch (text[i].toLowerCase()) {
+      case 'a':
+      case 'f':
+      case 'l':
+      case 'q':
+      case 'v':
+        Code += '. '
+        break;
+      case 'b':
+      case 'g':
+      case 'm':
+      case 'r':
+      case 'w':
+        Code += '.. '
+        break;
+      case 'c':
+      case 'k':
+      case 'h':
+      case 'n':
+      case 's':
+      case 'x':
+        Code += '... '
+        break;
+      case 'd':
+      case 'i':
+      case 'o':
+      case 't':
+      case 'y':
+        Code += '.... '
+        break;
+      case 'e':
+      case 'j':
+      case 'p':
+      case 'u':
+      case 'z':
+        Code += '..... '
+        break;
+    }
+  }
+  return (Code.trim());
+ }
