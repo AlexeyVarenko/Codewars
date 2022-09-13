@@ -20,3 +20,11 @@ function index(array, n){
         }
     }
   }
+
+
+
+
+  function unusualFive() {
+    let five = 'lalaa'
+    return five.length
+  }
