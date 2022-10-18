@@ -1983,4 +1983,19 @@ function search(budget, prices) {
   }
   let result= arr.sort((a, b) => a - b).join();
 return(result)
+};
+
+
+/*esreveR
+Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+
+(the dedicated builtin(s) functionalities are deactivated)*/
+
+
+reverse = function(array) {
+  var a = [];
+   for (i = 0; i < array.length; i++){
+      a[i] = array[(array.length - 1) - i]
+   }
+  return(a); 
 }
