@@ -2013,3 +2013,49 @@ function solution(string) {
   return(string.replace(/([A-Z])/g, ' $1'));
 
 }
+
+
+/*Circle cipher
+
+read it left to right
+output is csordaew
+
+decoding is almost same
+
+take csordaew return codewars*/
+
+
+function encode(s) {
+  let result = [];
+  let arr = s.split('')
+
+  for ( let i = 0; i <= s.length; i++ ) {
+
+    result.push(arr[0])
+    result.push(arr[arr.length - 1])
+
+    arr.pop()
+    arr.shift()
+
+  }
+  let final = result.join('') + arr.join('')
+  return s.length % 2 === 0? final : final.slice(0,-1)
+
+}
+
+function decode(s) {
+   let result = [];
+  let arr = s.split('').reverse()
+
+  for ( let i = 0; i <= s.length; i++ ) {
+
+    result.unshift(arr[0])
+    result.push(arr[1])
+
+    arr.shift()
+    arr.shift()
+
+  }
+  return s.length % 2 === 0? result.reverse().join('') : result.join('')
+
+}
