@@ -2258,3 +2258,23 @@ function squares(x, n) {
     }else {
     return([])
   }}
+
+
+  /*Debug Sum of Digits of a Number
+
+  Debug   function getSumOfDigits that takes positive integer to calculate sum of it's digits. Assume that argument is an integer.
+
+Example
+123  => 6
+223  => 7
+1337 => 14*/
+
+function getSumOfDigits(integer) {
+  let sum=0;
+ var digits =  integer.toString().split("");
+ let rez=digits.map(Number)
+for (let i=0; i<rez.length; i++){
+  sum+=rez[i]
+}
+ return(sum)
+}
