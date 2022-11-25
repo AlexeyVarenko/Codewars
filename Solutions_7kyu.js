@@ -2585,3 +2585,14 @@ Examples can be found in the test fixture.*/
 function isLeapYear(year) {
   return (year % 100 !== 0 && year % 4 === 0) || year % 400 === 0;
  }
+
+
+ /*Sum of angles
+
+ Find the total sum of internal angles (in degrees) in an n-sided simple polygon. N will be greater than 2.*/
+
+
+ function angle(n) {
+  let result = 2*90*(n-2);
+  return result
+}
