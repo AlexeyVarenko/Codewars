@@ -2596,3 +2596,20 @@ function isLeapYear(year) {
   let result = 2*90*(n-2);
   return result
 }
+
+/*
+How many arguments
+
+args_count(1, 2, 3) -> 3
+args_count(1, 2, 3, 10) -> 4
+*/
+
+// Create a function called args_count that returns the number of arguments provided
+function args_count(arg) {
+  let result=[];
+for (let i=0; i<arguments.length; i++){
+  result.push(arguments[i])
+  
+}
+  return(result.length)
+}
