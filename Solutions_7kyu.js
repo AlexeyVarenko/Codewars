@@ -2781,3 +2781,26 @@ Examples with 3 and 4 lines*/
 function maxBisectors(n) {
   return Math.floor(n*n/4);
 }
+
+
+
+/*Shortest Word
+
+
+Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+
+*/
+
+
+function findShort(s){
+  let arrS = s.split(' ');
+  let shortestWord = arrS[0];
+  for (var i = 0; i < arrS.length; i++) {
+    if (arrS[i].length < shortestWord.length) {
+     shortestWord = arrS[i];
+    }
+   }
+   return shortestWord.length;
+  }
